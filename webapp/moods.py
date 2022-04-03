@@ -2,25 +2,23 @@ from flask import Blueprint, render_template, request
 import requests
 import os
 
-moods = Blueprint("moods", __name__)
-API_KEY = os.environ.get("API_KEY") #envrionment variable
+moods = Blueprint("moods", __name__) #blueprint to be registered
+API_KEY = os.environ.get("API_KEY") #envrionment variable for confidential api key
 
 @moods.route('/', methods=["GET", "POST"]) #main route
 def mainpage():
     possible_weathers = ['Clear','Clouds', 'Rain', 'Wind', 'Snow'] #possible weathers
-    city = 'Toronto'
-    
+ 
     if request.method == "POST":
         city = request.form.get('city')
         URL = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}'
     
 
         response = requests.get(URL).json()
-        if response["cod"] == "404":
+        if response["cod"] == "404": #If the city is not valid
             return render_template("error.html")
-        weather = response['weather'][0]['main'] #finding weather from reutrned json
 
-        print(weather)
+        weather = response['weather'][0]['main'] #finding weather from reutrned json
         
         for option in possible_weathers:
             if option == weather: #Rendering different templates based on weather

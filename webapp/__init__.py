@@ -4,7 +4,7 @@ import os
 def create_app():
     app = Flask(__name__)
     app.config['DEBUG'] = True
-    app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY") #environment variable
+    app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY") #environment variable for secret key configuration
 
     from .moods import moods
 

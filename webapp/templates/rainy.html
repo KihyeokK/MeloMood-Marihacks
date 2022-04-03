@@ -1,4 +1,15 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
+{% block title%}
+    <title>Rainy</title>
+{% endblock%}
+{% block stylecolor %}
+<style>
+    body {
+        background-image: linear-gradient(to right, #6782b4, #b1bfd8);
+        margin: 0;
+    }
+</style>
+{% endblock %} 
 {% block weather %}rainy{% endblock %}   
 {% block content %}
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3r82Jvzw3SSGKKiKf3dXMM?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
