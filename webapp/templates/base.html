@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/marihacks.css">
+    <style>
+        .playlist {
+            width: 50%;
+            margin: 1em auto;
+        }
+
+        .weather-message {
+            margin-top: 8em;
+            font-size: 2em;
+        }
+        
+        .return-home {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a href="/"><i class="fa-solid fa-headphones"></i>Melo<span>Mood</span></a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="weather-message">
+            <!-- below this line will vary for different city and weather-->
+            <p>{{city}} is currently {% block weather %} {% endblock %}.</p> 
+            <!-- above this line will vary for different city and weather-->
+        </div>    
+        <div class="playlist">
+            {% block content %}
+            <!-- This is where the spotify playlist will be embedded-->
+            {% endblock %}
+        </div>
+        <a class="return-home" href="/">return to home</a>
+    </div>
+</body>
+</html>

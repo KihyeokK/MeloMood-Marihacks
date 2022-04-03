@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+    text-align: center;
+}
+
+body {
+    background-image: linear-gradient(to right, #9198e5, pink);
+    margin: 0;
+}
+
+.navbar {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 2em;
+}
+
+.navbar .container a {
+    color: white;
+}
+
+.navbar .container span {
+    color: black;
+}
+
+i {
+    margin-right: 0.4em;
+}
+
+.hero .container {
+    margin-top: 20em;
+}
+
+h1 {
+    font-size: 2.6em;
+}
+
+.subhead {
+    font-family: "Space Mono";
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+input {
+    font-size: 0.8em;
+    padding: .5em;
+    border-radius: 0.5em;
+    border: 2px solid gray;
+    margin: 0em;
+}
+ 
+.submit {
+    cursor: pointer;
+}
+
+
+
